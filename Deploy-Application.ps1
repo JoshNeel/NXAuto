@@ -101,14 +101,14 @@ Try {
         }
 
         ## Check For Pending Reboot
-        $Reboot = Get-PendingReboot
-        if($Reboot.IsSystemRebootPending -eq $True -or $Reboot.IsCBServicingRebootPending -eq $True -or $Reboot.IsWindowsUpdateRebootPending -eq $True -or $Reboot.IsSCCMClientRebootPending -eq $True -or $Reboot.IsFileRenameRebootPending -eq $True)
-        {
+        #$Reboot = Get-PendingReboot
+        #if($Reboot.IsSystemRebootPending -eq $True -or $Reboot.IsCBServicingRebootPending -eq $True -or $Reboot.IsWindowsUpdateRebootPending -eq $True -or $Reboot.IsSCCMClientRebootPending -eq $True -or $Reboot.IsFileRenameRebootPending -eq $True)
+        #{
         ## A Reboot Is Pending, Cannot Proceed Without a Restart
-        Write-Log -Message "A system restart is required before the installation of $installTitle can proceed." -Severity 2
-        Show-InstallationPrompt -Message "A system restart is required before the installation of $installTitle can proceed, please reboot at your earliest convenience." -ButtonRightText 'OK'
-        Exit-Script -ExitCode 69004 #This code is to indicate a reboot is pending on this machine, and the installation cannot proceed.
-        }
+        #Write-Log -Message "A system restart is required before the installation of $installTitle can proceed." -Severity 2
+        #Show-InstallationPrompt -Message "A system restart is required before the installation of $installTitle can proceed, please reboot at your earliest convenience." -ButtonRightText 'OK'
+        #Exit-Script -ExitCode 69004 #This code is to indicate a reboot is pending on this machine, and the installation cannot proceed.
+        #}
   
         [string]$installPhase = 'Installation'
 
